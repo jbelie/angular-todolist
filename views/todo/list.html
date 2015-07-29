@@ -1,0 +1,12 @@
+<section id="toDoTasks">
+	<form id="add-task">
+		<input type="text" name="taskContent" ng-model="task.content" value="{{task.content}}"/>
+		<button ng-click="addTask(task)">Ajouter</button>
+	</form>
+	
+	<ul ng-repeat="task in tasks">
+		<task-decorate></task-decorate>
+	</ul>
+	Nombre de taches : {{ tasks.length }}<br/>
+	Nombre de taches restantes : {{ tasks.length  }}<br/>
+</section>
