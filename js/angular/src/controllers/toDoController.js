@@ -1,8 +1,15 @@
 'use strict';
 
-app.controller("toDoController",function($scope,taskProvider){
+app.controller("toDoController",function($scope,$routeParams,taskProvider){
+
+
+	if(angular.isUndefined($routeParams.status))
+		$scope.status = "";
+	else
+		$scope.status = ($routeParams.status=="complete")?true:false;
 	
-	$scope.isDone = false;
+	console.log($scope.status);
+	
 	$scope.tasks = taskProvider.getTasks();
 
 	$scope.addTask = function(task){
@@ -12,9 +19,11 @@ app.controller("toDoController",function($scope,taskProvider){
 			isDone	: 	false
 		};
 		
-		taskProvider.addTask(taskToAdd);
-		$scope.task.content = "";
-
+		if($scope.task.content.length >=1){
+			taskProvider.addTask(taskToAdd);
+			$scope.task.content = "";
+		}
 	}
+
 });
 
