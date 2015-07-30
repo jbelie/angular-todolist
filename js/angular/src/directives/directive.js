@@ -2,7 +2,8 @@
 
 app.directive('taskDecorate',function(){
 	return{
-		restrict: "E",
-		templateUrl : 'views/todo/decorator/taskHTML.html' 
+		restrict	:	'E',
+		replace		:	true,
+		templateUrl :	'views/todo/decorator/taskHTML.html' 
 	}
 });

@@ -1,13 +1,16 @@
-<section id="toDoTasks">
-	{{$scope.status}}
-	<form id="add-task">
-		<input type="text" name="taskContent" ng-model="task.content" value="{{task.content}}"/>
-		<button ng-click="addTask(task)">Ajouter</button>
-	</form>
+<ul id="todo-list">
+	<task-decorate ng-repeat="task in tasks | filter:{isDone:status}"></task-decorate>
+</ul>
 
-	<ul ng-repeat="task in tasks | filter:{isDone:status}">
-		<task-decorate></task-decorate>
-	</ul>
-	Nombre de taches : {{ tasks.length }}<br/>
-	Nombre de taches restantes : {{ tasks.length }}<br/>
-</section>
+<form id="add-task-form" class="form-inline">
+	<div class="form-group">
+		<input type="text" name="taskContent" ng-model="task.content" value="{{task.content}}" placeholder="Add a task" class="form-control"/>
+		<button ng-click="addTask(task)" id="add-task-button"><span class="glyphicon glyphicon-plus"></span>Add</button>
+		<div class="clearfix"></div>
+	</div>
+</form>
+
+<div id="task-counter">
+	<span class="bold">Tasks :</span> {{ tasks.length }} / {{ tasks.length }}<br/>
+</div>
+
