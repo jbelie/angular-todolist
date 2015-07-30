@@ -31,13 +31,10 @@ app.service('taskProvider',function(){
 		
 		this.addTask = function(task){
 			tasks.push(task);
-			
-			return tasks;
 		}
 		
-		this.removeTasks = function(tasks){
-
-			return tasks;
+		this.removeTask = function(index){
+			tasks.splice(index,1);
 		}
 		
 		this.updateItem = function(item){

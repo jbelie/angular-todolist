@@ -1,4 +1,5 @@
 <li>
-	<input type="checkbox" name="task_{{task.id}}" id="task_{{task.id}}" ng-checked="{{task.isDone}}"/>
+	<input type="checkbox" name="task_{{task.id}}" id="task_{{task.id}}" ng-checked="{{task.isDone}}" ng-click="updateStatusTask(task)" />
 	<label for="task_{{task.id}}">{{task.content}}</label>
+	<button ng-click="deleteTask($index)">Supprimer</button>
 </li>

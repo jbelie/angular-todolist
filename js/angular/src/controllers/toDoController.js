@@ -2,16 +2,25 @@
 
 app.controller("toDoController",function($scope,$routeParams,taskProvider){
 
-
+	/*
+	 * Display all tasks | toDo | complete tasks
+	 */
 	if(angular.isUndefined($routeParams.status))
 		$scope.status = "";
 	else
 		$scope.status = ($routeParams.status=="complete")?true:false;
 	
-	console.log($scope.status);
 	
+	/*
+	 * Get All tasks
+	 * No database for demo
+	 */
 	$scope.tasks = taskProvider.getTasks();
 
+
+	/*
+	 * Add a task
+	 */
 	$scope.addTask = function(task){
 		var taskToAdd = {
 			id 		: 	$scope.tasks.length + 1,
@@ -24,6 +33,21 @@ app.controller("toDoController",function($scope,$routeParams,taskProvider){
 			$scope.task.content = "";
 		}
 	}
+	
+	/*
+	 * Change status task
+	 */
+	 $scope.updateStatusTask = function(task){
+		task.isDone = !task.isDone;
+	 }
+	 
+	/*
+	 * Remove task
+	 */
+	 $scope.deleteTask = function(index){
+		taskProvider.removeTask(index);
+	 }
+	 
 
 });
 
