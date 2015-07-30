@@ -77,9 +77,9 @@ ul#todo-list{
 ul#todo-list li{
 	padding:0px 10px;
 	position:relative;
-	height:40px;
 }
 ul#todo-list li.no-task{
+	height:40px;
 	text-align:center;
 	line-height:40px;
 }
