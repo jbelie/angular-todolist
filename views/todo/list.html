@@ -12,12 +12,12 @@
 </form>
 
 <div ng-repeat="item in toDoArray = (tasks | filter:{isDone:false})"></div>
-<div id="task-counter">
+<footer id="task-counter">
 	<span ng-show="toDoArray.length">
 		<span class="bold">Tasks :</span> {{ toDoArray.length }} / {{ tasks.length }}
 	</span>
 	<span ng-hide="toDoArray.length">
 		<span class="bold">Well done</span>
 	</span>
-</div>
+</footer>
 
