@@ -55,6 +55,9 @@ ul{
 	padding:5px 0px;
 	text-align:center;
 }
+#menu li{
+	display:inline;
+}
 #menu a{
 	color:#FFF;
 	padding:5px;
