@@ -1,4 +1,3 @@
-http://jbelie.github.io/angular-todolist/#/
 # Angular - Todo List
 
 ## Demo
