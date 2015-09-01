@@ -1,4 +1,4 @@
 # Angular - Todo List
 
 ## Demo
-[http://jbelie.github.io/angular-todolist/](http://jbelie.github.io/angular-todolist/ "Angular ToDo List")
+<a href="http://jbelie.github.io/angular-todolist/" target="_blank">jbelie.github.io/angular-todolist/</a>
